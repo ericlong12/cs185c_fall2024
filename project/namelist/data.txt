@@ -50,7 +50,7 @@
 
 # Input datasets
  &PARM05
- bathyFile = 'CA_bathymetry.bin',
+ bathyFile = 'ChukchiSea1.bin',
  hydrogThetaFile = 'THETA_IC.bin',
  hydrogSaltFile = 'SALT_IC.bin',
  uVelInitFile = 'UVEL_IC.bin',
