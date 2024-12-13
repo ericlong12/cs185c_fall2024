@@ -1,40 +1,30 @@
 # Open-boundaries
  &OBCS_PARM01
 #
- OBCSfixTopo=.FALSE.,
+ OBCSfixTopo = .FALSE.,  
 #
- OB_Jsouth= n_cols*1,
- OB_Iwest = n_rows*1,
- OB_Jnorth= n_cols*max_row,
- OB_Ieast = n_rows*max_col,
+ OB_Jsouth = 240*1,     
+ OB_Iwest  = 360*1,
+ OB_Jnorth = 240*240,   
+ OB_Ieast  = 360*360,    
 #
- useOBCSsponge = .TRUE.,
+ useOBCSsponge = .TRUE.,   
 #
- useOBCSbalance = .TRUE.,
+ useOBCSbalance = .TRUE.,  
  OBCSbalanceSurf = .TRUE.,
 #
- useOBCSprescribe = .TRUE.,
+ useOBCSprescribe = .TRUE., s
 #
-# identify files (uncomment as needed)
-# OBEuFile = 'obcs/UVEL_east',
-# OBSuFile = 'obcs/UVEL_south',
-# OBWuFile = 'obcs/UVEL_west',
-# OBNuFile = 'obcs/UVEL_north',
+# Identify files (uncomment and adjust as needed)
+ OBSuFile = 'obcs/UVEL_south',
+ OBNuFile = 'obcs/UVEL_north',
+ OBSvFile = 'obcs/VVEL_south',
+ OBNvFile = 'obcs/VVEL_north',
 #
-# OBEvFile = 'obcs/VVEL_east',
-# OBSvFile = 'obcs/VVEL_south',
-# OBWvFile = 'obcs/VVEL_west',
-# OBNvFile = 'obcs/VVEL_north',
-#
-# OBEtFile = 'obcs/THETA_east',
-# OBStFile = 'obcs/THETA_south',
-# OBWtFile = 'obcs/THETA_west',
-# OBNtFile = 'obcs/THETA_north',
-#
-# OBEsFile = 'obcs/SALT_east',
-# OBSsFile = 'obcs/SALT_south',
-# OBWsFile = 'obcs/SALT_west',
-# OBNsFile = 'obcs/SALT_north',
+ OBStFile = 'obcs/THETA_south',
+ OBNtFile = 'obcs/THETA_north',
+ OBSsFile = 'obcs/SALT_south',
+ OBNsFile = 'obcs/SALT_north',
 #
  &
 
@@ -42,9 +32,9 @@
  &
 
  &OBCS_PARM03
- spongeThickness = 10,
- Urelaxobcsinner = 1296000.E0,
- Vrelaxobcsinner = 1296000.E0,
- Urelaxobcsbound=43200.E0,
- Vrelaxobcsbound=43200.E0,
+ spongeThickness = 10,          # Thickness of sponge layer
+ Urelaxobcsinner = 1296000.E0,  # Inner relaxation (15 days)
+ Vrelaxobcsinner = 1296000.E0,  # Inner relaxation (15 days)
+ Urelaxobcsbound = 43200.E0,    # Boundary relaxation (12 hours)
+ Vrelaxobcsbound = 43200.E0,    # Boundary relaxation (12 hours)
  &
