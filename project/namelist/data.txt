@@ -11,7 +11,7 @@
  tempAdvScheme=7,
  saltAdvScheme=7,
  StaggerTimeStep=.TRUE.,
- useSingleCPUio=.TRUE.,
+ useSingleCPUio=.FALSE., 
  exactConserv=.TRUE.,
  useRealFreshWaterFlux=.TRUE.,
  debugLevel=0,
@@ -26,9 +26,9 @@
 # Time stepping parameters
  &PARM03
  niter0=0,
- deltaT=300.,
- nTimeSteps = 288,
- pChkptFreq=2592000.,
+ deltaT=60.,  # Smaller time step 
+ nTimeSteps=360,  # 6 hours of simulation
+ pChkptFreq=21600.,  # Save every 6 hours
  dumpInitAndLast=.FALSE.,
  writePickupAtEnd=.TRUE.,
  &
@@ -36,10 +36,10 @@
 # Gridding parameters
  &PARM04
  usingSphericalPolarGrid=.TRUE.,
- delX=240*0.083333,
- delY=360*0.0625,
- xgOrigin=-135,
- ygOrigin=29,
+ delX=360*0.083333, 
+ delY=240*0.0625,   
+ xgOrigin=-158,     
+ ygOrigin=65,       
  delR = 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.01,
         10.03, 10.11, 10.32, 10.80, 11.76, 13.42, 16.04, 19.82, 24.85,
         31.10, 38.42, 46.50, 55.00, 63.50, 71.58, 78.90, 85.15, 90.18,
@@ -50,7 +50,7 @@
 
 # Input datasets
  &PARM05
- bathyFile = 'ChukchiSea1.bin',
+ bathyFile = 'ChukchiSea1.bin',  
  hydrogThetaFile = 'THETA_IC.bin',
  hydrogSaltFile = 'SALT_IC.bin',
  uVelInitFile = 'UVEL_IC.bin',
