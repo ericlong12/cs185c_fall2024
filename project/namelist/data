@@ -26,9 +26,9 @@
 # Time stepping parameters
  &PARM03
  niter0=0,
- deltaT=300.,
- nTimeSteps=105120,  # Adjusted to cover 1 year (2008) with 5-min time step
- pChkptFreq=2592000.,  # Checkpoint frequency (1 month)
+ deltaT=300.,                 # Time step: 5 minutes (300s)
+ nTimeSteps = 105120,         # Total time steps (365 days at 300s per step)
+ pChkptFreq=2592000.,         # Checkpoint frequency (30 days)
  dumpInitAndLast=.FALSE.,
  writePickupAtEnd=.TRUE.,
  &
@@ -36,10 +36,10 @@
 # Gridding parameters
  &PARM04
  usingSphericalPolarGrid=.TRUE.,
- delX=240*0.083333,         # 1/12 degree resolution (updated grid spacing)
- delY=360*0.0625,           # 1/16 degree resolution
- xgOrigin=-158,             # Chukchi Sea domain (longitude origin)
- ygOrigin=65,               # Chukchi Sea domain (latitude origin)
+ delX=240*0.083333,           # Updated grid: 1/12 degree longitude (Chukchi Sea)
+ delY=360*0.0625,             # Updated grid: 1/16 degree latitude (Chukchi Sea)
+ xgOrigin=-158,               # Starting longitude of Chukchi Sea grid
+ ygOrigin=65,                 # Starting latitude of Chukchi Sea grid
  delR = 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.01,
         10.03, 10.11, 10.32, 10.80, 11.76, 13.42, 16.04, 19.82, 24.85,
         31.10, 38.42, 46.50, 55.00, 63.50, 71.58, 78.90, 85.15, 90.18,
@@ -50,10 +50,10 @@
 
 # Input datasets
  &PARM05
- bathyFile = 'ChukchiSea1.bin',   # Updated bathymetry file for Chukchi Sea
- hydrogThetaFile = 'THETA_IC.bin',  # Initial temperature field
- hydrogSaltFile = 'SALT_IC.bin',    # Initial salinity field
- uVelInitFile = 'UVEL_IC.bin',      # Initial zonal velocity field
- vVelInitFile = 'VVEL_IC.bin',      # Initial meridional velocity field
- pSurfInitFile = 'ETAN_IC.bin',     # Initial surface pressure field
+ bathyFile = 'ChukchiSea1.bin',      # Updated bathymetry file for Chukchi Sea
+ hydrogThetaFile = 'THETA_IC.bin',   # Updated initial temperature conditions
+ hydrogSaltFile = 'SALT_IC.bin',     # Updated initial salinity conditions
+ uVelInitFile = 'UVEL_IC.bin',       # Updated initial U-velocity
+ vVelInitFile = 'VVEL_IC.bin',       # Updated initial V-velocity
+ pSurfInitFile = 'ETAN_IC.bin',      # Updated surface elevation initial condition
  &
