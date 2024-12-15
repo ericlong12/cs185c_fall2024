@@ -1,8 +1,5 @@
-# Packages
  &PACKAGES
- useCAL         = .TRUE.,
- useEXF         = .TRUE.,
- useOBCS        = .TRUE.,
- useKPP         = .TRUE.,
- useDIAGNOSTICS = .TRUE.,
+ useEXF=.TRUE.,         # External forcing
+ useOBCS=.TRUE.,        # Open boundary conditions
+ useDIAGNOSTICS=.TRUE., # Diagnostics
  &
