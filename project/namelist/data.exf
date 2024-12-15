@@ -4,78 +4,78 @@
 
  &EXF_NML_01
  exf_albedo        = 0.1,
- useExfYearlyFields= .TRUE.,  # Enable yearly field cycling
- useExfCheckRange  = .FALSE., # Skip range checking
+# useExfZenIncoming = .TRUE., 
+# select_ZenAlbedo  = 1,
+ useExfYearlyFields= .TRUE.,       # Use yearly fields for forcing data
+ useExfCheckRange  = .FALSE.,
  /
 
  &EXF_NML_02
- # Disabling atmospheric forcing fields as they are not relevant for a tsunami simulation
- uwindfile       = 'none',  
- vwindfile       = 'none',
- atempfile       = 'none',
- aqhfile         = 'none',
- precipfile      = 'none',
- swdownfile      = 'none',
- lwdownfile      = 'none',
- #
-
- # Start dates remain the same for January 1, 2008
- atempstartdate1   = 20080101,
- atempstartdate2   = 030000,
- atempperiod       = 21600.0,
-
- aqhstartdate1     = 20080101,
- aqhstartdate2     = 030000,
- aqhperiod         = 21600.0,
-
- precipstartdate1  = 20080101,
- precipstartdate2  = 030000,
- precipperiod      = 21600.0,
-
- uwindstartdate1   = 20080101,
- uwindstartdate2   = 030000,
- uwindperiod       = 21600.0,
-
- vwindstartdate1   = 20080101,
- vwindstartdate2   = 030000,
- vwindperiod       = 21600.0,
-
- swdownstartdate1  = 20080101,
- swdownstartdate2  = 030000,
- swdownperiod      = 21600.0,
-
- lwdownstartdate1  = 20080101,
- lwdownstartdate2  = 030000,
- lwdownperiod      = 21600.0,
+ uwindfile         = 'exf/UWIND_2008',       # Zonal wind forcing
+ vwindfile         = 'exf/VWIND_2008',       # Meridional wind forcing
+ atempfile         = 'exf/ATEMP_2008',       # Atmospheric temperature forcing
+ aqhfile           = 'exf/AQH_2008',         # Specific humidity forcing
+ precipfile        = 'exf/PRECIP_2008',      # Precipitation forcing
+ swdownfile        = 'exf/SWDOWN_2008',      # Shortwave downward radiation forcing
+ lwdownfile        = 'exf/LWDOWN_2008',      # Longwave downward radiation forcing
+# runofffile        = 'exf/RUNOFF',          # Runoff can remain commented for tsunami studies
+#
+ atempstartdate1   = 20080101,               # Start date for atmospheric temperature forcing
+ atempstartdate2   = 000000,
+ atempperiod       = 21600.0,                # 6-hourly forcing frequency
+#
+ aqhstartdate1     = 20080101,               # Start date for humidity forcing
+ aqhstartdate2     = 000000,
+ aqhperiod         = 21600.0,                # 6-hourly forcing frequency
+#
+ precipstartdate1  = 20080101,               # Start date for precipitation forcing
+ precipstartdate2  = 000000,
+ precipperiod      = 21600.0,                # 6-hourly forcing frequency
+#
+ uwindstartdate1   = 20080101,               # Start date for zonal wind forcing
+ uwindstartdate2   = 000000,
+ uwindperiod       = 21600.0,                # 6-hourly forcing frequency
+#
+ vwindstartdate1   = 20080101,               # Start date for meridional wind forcing
+ vwindstartdate2   = 000000,
+ vwindperiod       = 21600.0,                # 6-hourly forcing frequency
+#
+ swdownstartdate1  = 20080101,               # Start date for shortwave radiation
+ swdownstartdate2  = 000000,
+ swdownperiod      = 21600.0,                # 6-hourly forcing frequency
+#
+ lwdownstartdate1  = 20080101,               # Start date for longwave radiation
+ lwdownstartdate2  = 000000,
+ lwdownperiod      = 21600.0,                # 6-hourly forcing frequency
+#
  /
 
  &EXF_NML_03
  /
 
  &EXF_NML_04
- runoff_interpMethod = 0,   
- uwind_interpMethod = 0,
- vwind_interpMethod = 0,
- atemp_interpMethod = 0,
- aqh_interpMethod = 0,
- precip_interpMethod = 0,
- swdown_interpMethod = 0,
- lwdown_interpMethod = 0,
+ runoff_interpMethod = 0,                     # No interpolation for runoff
+ uwind_interpMethod  = 0,                     # Linear interpolation for wind forcing
+ vwind_interpMethod  = 0,
+ atemp_interpMethod  = 0,                     # Linear interpolation for atmospheric temperature
+ aqh_interpMethod    = 0,                     # Linear interpolation for specific humidity
+ precip_interpMethod = 0,                     # Linear interpolation for precipitation
+ swdown_interpMethod = 0,                     # Linear interpolation for shortwave radiation
+ lwdown_interpMethod = 0,                     # Linear interpolation for longwave radiation
  /
 
  &EXF_NML_OBCS
- # Open boundary conditions start January 1, 2008
- obcsSstartdate1     = 20080101,
- obcsSstartdate2     = 120000,
- obcsSperiod         = 2592000.0,
-
- obcsNstartdate1     = 20080101,
- obcsNstartdate2     = 120000,
+ obcsSstartdate1     = 20080101,              # Southern boundary forcing start date
+ obcsSstartdate2     = 000000,
+ obcsSperiod         = 2592000.0,             # Monthly boundary forcing
+#
+ obcsNstartdate1     = 20080101,              # Northern boundary forcing start date
+ obcsNstartdate2     = 000000,
  obcsNperiod         = 2592000.0,
-
- obcsWstartdate1     = 20080101,
- obcsWstartdate2     = 120000,
+#
+ obcsWstartdate1     = 20080101,              # Western boundary forcing start date
+ obcsWstartdate2     = 000000,
  obcsWperiod         = 2592000.0,
-
- useOBCSYearlyFields = .TRUE.,
- /
+#
+ useOBCSYearlyFields = .TRUE.,                # Use yearly fields for boundary conditions
+ &
