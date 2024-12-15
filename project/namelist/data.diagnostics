@@ -2,43 +2,66 @@
 #
  &diagnostics_list
      dumpAtLast = .TRUE.,
+#
 #-- 
-# Daily snapshots of sea surface height (SSHA) for tsunami propagation
-#-- 
-  fields(1,1) = 'ETAN    ',                        # Sea surface height anomaly
+# 2D Field Output: Surface Elevation (Snapshots)
+# To analyze tsunami wave heights and propagation at the surface.
+#--
+  fields(1,1) = 'ETAN    ',
   fileName(1) = 'diags/EtaN_day_snap/EtaN_day_snap',
-  frequency(1) = -86400.,                          # Output daily
-
+  frequency(1) = -3600.,   # Hourly snapshots for detailed tsunami tracking
+#
 #-- 
-# Monthly means of sea surface height (optional for longer runs)
-#-- 
+# 2D Field Output: Surface Elevation (Daily Means)
+# To observe averaged wave propagation trends over each day.
+#--
   fields(1,2) = 'ETAN    ',
-  fileName(2) = 'diags/EtaN_mon_mean/EtaN_mon_mean',
-  frequency(2) = 2592000.,                         # Output monthly means
-
+  fileName(2) = 'diags/EtaN_day_mean/EtaN_day_mean',
+  frequency(2) = 86400.,   # Daily mean outputs
+#
 #-- 
-# Daily snapshots of 3D velocity fields
+# 3D Field Output: Horizontal Velocities (Snapshots)
+# To capture wave-induced currents throughout the water column.
+#--
+  fields(1:2,3) = 'UVEL    ','VVEL    ',
+  fileName(3) = 'diags/vel_3D_hr_snap/vel_3D_hr_snap',
+  frequency(3) = -3600.,   # Hourly snapshots for high-resolution analysis
+#
 #-- 
-  fields(1:2,3) = 'UVEL    ','VVEL    ',          # Zonal and meridional velocities
-  fileName(3) = 'diags/vel_3D_day_snap/vel_3D_day_snap',
-  frequency(3) = -86400.,                         # Output daily snapshots
-
+# 3D Field Output: Horizontal Velocities (Daily Means)
+# To investigate longer-term flow patterns due to tsunami waves.
+#--
+  fields(1:2,4) = 'UVEL    ','VVEL    ',
+  fileName(4) = 'diags/vel_3D_day_mean/vel_3D_day_mean',
+  frequency(4) = 86400.,   # Daily mean outputs
+#
 #-- 
-# Monthly means of temperature and salinity fields
+# 3D Field Output: Temperature and Salinity (Daily Snapshots)
+# To observe water properties as wave energy propagates.
+#--
+  fields(1:2,5) = 'THETA   ','SALT    ',
+  fileName(5) = 'diags/TS_3D_day_snap/TS_3D_day_snap',
+  frequency(5) = -86400.,  # Daily snapshots
+#
 #-- 
-  fields(1:2,4) = 'THETA   ','SALT    ',          # Temperature and salinity
-  fileName(4) = 'diags/TS_3D_mon_mean/TS_3D_mon_mean',
-  frequency(4) = 2592000.,                        # Output monthly means
-
+# 2D Field Output: Kinetic Energy (Snapshots)
+# To directly analyze tsunami-induced energy distribution.
+#--
+  fields(1,6) = 'KE       ',
+  fileName(6) = 'diags/KE_2D_hr_snap/KE_2D_hr_snap',
+  frequency(6) = -3600.,   # Hourly snapshots
+#
 #-- 
-# Daily means at surface level for temperature and salinity
-#-- 
-  fields(1:2,5) = 'THETA   ','SALT    ',          # Surface temperature and salinity
-  fileName(5) = 'diags/TS_surf_daily_mean/TS_surf_daily_mean',
-  frequency(5) = 86400.,                          # Daily averages at the surface
-  levels(:,5) = 1,                                # Level 1 only (surface)
+# 2D Field Output: Surface Temperature and Salinity (Daily Means)
+# To observe surface water changes during tsunami propagation.
+#--
+  fields(1:2,7) = 'THETA   ','SALT    ',
+  fileName(7) = 'diags/TS_surf_day_mean/TS_surf_day_mean',
+  frequency(7) = 86400.,   # Daily mean outputs
+  levels(:,7) = 1,         # Surface level only
+#
  &
- 
+
 # Parameter for Diagnostics of per level statistics:
  &DIAG_STATIS_PARMS
  &
