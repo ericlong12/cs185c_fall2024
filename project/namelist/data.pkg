@@ -1,8 +1,8 @@
 # Packages
  &PACKAGES
- useCAL         = .TRUE.,
- useEXF         = .TRUE.,
- useOBCS        = .TRUE.,
- useKPP         = .TRUE.,
- useDIAGNOSTICS = .TRUE.,
+ useEXF         = .TRUE.,    # External forcing (for tsunami source input)
+ useOBCS        = .TRUE.,    # Open Boundary Conditions (for tsunami wave input/output)
+ useDIAGNOSTICS = .TRUE.,    # Diagnostics for analyzing wave propagation
+ # useCAL       = .FALSE.,   # Calendar forcing - unnecessary for tsunami
+ # useKPP       = .FALSE.,   # Vertical mixing - not needed for tsunami
  &
