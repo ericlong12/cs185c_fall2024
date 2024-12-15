@@ -4,7 +4,7 @@
 # *******************
  &CAL_NML
  TheCalendar='gregorian',
- startDate_1=20080115,   # Start date (adjust as needed for the experiment)
- startDate_2=000000,     # Time of day (UTC)
- calendarDumps = .TRUE., # Enables tracking time in diagnostics and outputs
+ startDate_1=20080115,
+ startDate_2=000000,
+ calendarDumps = .TRUE.,
  &
