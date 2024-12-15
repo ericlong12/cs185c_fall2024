@@ -1,47 +1,32 @@
 # Open-boundaries
  &OBCS_PARM01
-#
- OBCSfixTopo=.FALSE.,                      # Do not fix topography at boundaries
-#
- OB_Jsouth = 240*1,                        
- OB_Iwest  = 360*1,                        # Western boundary active
- OB_Jnorth = 240*360,                      # Northern boundary active
- OB_Ieast  = 360*240,                      # Eastern boundary active
-#
- useOBCSsponge = .TRUE.,                   # Use sponge layers for smoother boundary conditions
-#
- useOBCSbalance = .TRUE.,                  # Enforce mass balance at open boundaries
- OBCSbalanceSurf = .TRUE.,                 # Balance surface forcing
-#
- useOBCSprescribe = .TRUE.,                # Use prescribed boundary conditions
-#
-# Eastern Boundary Files (Active)
- OBEuFile = 'obcs/UVEL_east',              # U-velocity at the eastern boundary
- OBEvFile = 'obcs/VVEL_east',              # V-velocity at the eastern boundary
- OBEtFile = 'obcs/THETA_east',             # Temperature at the eastern boundary
- OBEsFile = 'obcs/SALT_east',              # Salinity at the eastern boundary
-#
-# Western Boundary Files (Active)
- OBWuFile = 'obcs/UVEL_west',              # U-velocity at the western boundary
- OBWvFile = 'obcs/VVEL_west',              # V-velocity at the western boundary
- OBWtFile = 'obcs/THETA_west',             # Temperature at the western boundary
- OBWsFile = 'obcs/SALT_west',              # Salinity at the western boundary
-#
-# Northern Boundary Files (Active)
- OBNuFile = 'obcs/UVEL_north',             # U-velocity at the northern boundary
- OBNvFile = 'obcs/VVEL_north',             # V-velocity at the northern boundary
- OBNtFile = 'obcs/THETA_north',            # Temperature at the northern boundary
- OBNsFile = 'obcs/SALT_north',             # Salinity at the northern boundary
-#
- &
+ OB_Jsouth=0,                  # Disable southern boundary (land)
+ OB_Ieast=360*240,             # Enable eastern boundary
+ OB_Jnorth=240*360,            # Enable northern boundary
+ OB_Iwest=360*1,               # Enable western boundary
 
- &OBCS_PARM02
- &
-
- &OBCS_PARM03
- spongeThickness = 10,                     # Sponge layer thickness (10 grid points)
- Urelaxobcsinner = 1296000.E0,             # Relaxation time scale for inner boundary layers
- Vrelaxobcsinner = 1296000.E0,
- Urelaxobcsbound = 43200.E0,               # Relaxation time scale at the boundary edge
- Vrelaxobcsbound = 43200.E0,
+ useOBCSprescribe=.TRUE.,      # Use prescribed conditions
+ useOBCSsponge=.TRUE.,         # Enable sponge layers
+ spongeThickness=5,            # Minimal sponge layer thickness
+ #
+ # Boundary files
+ OBEuFile='obcs/UVEL_east',
+ OBSuFile='',
+ OBWuFile='obcs/UVEL_west',
+ OBNuFile='obcs/UVEL_north',
+ #
+ OBEvFile='obcs/VVEL_east',
+ OBSvFile='',
+ OBWvFile='obcs/VVEL_west',
+ OBNvFile='obcs/VVEL_north',
+ #
+ OBEtFile='obcs/THETA_east',
+ OBStFile='',
+ OBWtFile='obcs/THETA_west',
+ OBNtFile='obcs/THETA_north',
+ #
+ OBEsFile='obcs/SALT_east',
+ OBSsFile='',
+ OBWsFile='obcs/SALT_west',
+ OBNsFile='obcs/SALT_north',
  &
