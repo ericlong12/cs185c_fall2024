@@ -1,81 +1,18 @@
-# *********************
-# External Forcing Data
-# *********************
-
  &EXF_NML_01
- exf_albedo        = 0.1,                      # Default albedo
-# useExfZenIncoming = .TRUE., 
-# select_ZenAlbedo  = 1,
- useExfYearlyFields= .TRUE.,                   # Yearly forcing fields
- useExfCheckRange  = .FALSE.,                  # Disable range checking
+ exf_albedo=0.1,
+ useExfYearlyFields=.FALSE.,
+ useExfCheckRange=.FALSE.,
  /
 
  &EXF_NML_02
-# Wind forcing disabled since files UWIND_zero and VWIND_zero are unavailable
- uwindfile         = '',                       # Placeholder for no wind forcing
- vwindfile         = '',                       # Placeholder for no wind forcing
+ # Disable wind forcing
+ uwindfile='',
+ vwindfile='',
 
-# Atmospheric forcing fields
- atempfile         = 'exf/ATEMP',              # Air temperature file
- aqhfile           = 'exf/AQH',                # Specific humidity file
- precipfile        = 'exf/PRECIP',             # Precipitation file
- swdownfile        = 'exf/SWDOWN',             # Shortwave radiation file
- lwdownfile        = 'exf/LWDOWN',             # Longwave radiation file
-# runofffile        = 'exf/RUNOFF',            # Runoff (commented out for now)
-#
- atempstartdate1   = 20080101,
- atempstartdate2   = 030000,
- atempperiod       = 21600.0,                  # 6-hour frequency
-
- aqhstartdate1     = 20080101,
- aqhstartdate2     = 030000,
- aqhperiod         = 21600.0,
-
- precipstartdate1  = 20080101,
- precipstartdate2  = 030000,
- precipperiod      = 21600.0,
-
- swdownstartdate1  = 20080101,
- swdownstartdate2  = 030000,
- swdownperiod      = 21600.0,
-
- lwdownstartdate1  = 20080101,
- lwdownstartdate2  = 030000,
- lwdownperiod      = 21600.0,
- /
- 
- &EXF_NML_03
- /
-
- &EXF_NML_04
- runoff_interpMethod = 0,                      # Linear interpolation for runoff
- uwind_interpMethod = -1,                      # Disable wind interpolation
- vwind_interpMethod = -1,                      # Disable wind interpolation
- atemp_interpMethod = 0,                       # Linear interpolation
- aqh_interpMethod = 0,                         # Linear interpolation
- precip_interpMethod = 0,                      # Linear interpolation
- swdown_interpMethod = 0,                      # Linear interpolation
- lwdown_interpMethod = 0,                      # Linear interpolation
- /
-
- &EXF_NML_OBCS
-# Boundary forcing parameters
- obcsSstartdate1     = 20080101,               # Southern boundary start date
- obcsSstartdate2     = 120000,
- obcsSperiod         = 2592000.0,              # 30-day periodic forcing
-
- obcsNstartdate1     = 20080101,               # Northern boundary start date
- obcsNstartdate2     = 120000,
- obcsNperiod         = 2592000.0,
-
- obcsWstartdate1     = 20080101,               # Western boundary start date
- obcsWstartdate2     = 120000,
- obcsWperiod         = 2592000.0,
-
-# Eastern boundary disabled (California setup not relevant here)
-# obcsEstartdate1     = 20080101,
-# obcsEstartdate2     = 120000,
-# obcsEperiod         = 2592000.0,
-
- useOBCSYearlyFields = .TRUE.,                 # Yearly forcing for boundaries
+ # External atmospheric forcing files
+ atempfile='exf/ATEMP',
+ aqhfile='exf/AQH',
+ precipfile='exf/PRECIP',
+ swdownfile='exf/SWDOWN',
+ lwdownfile='exf/LWDOWN',
  /
