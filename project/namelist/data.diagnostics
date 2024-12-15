@@ -1,61 +1,6 @@
-# Diagnostic Package Choices
-#
  &diagnostics_list
-     dumpAtLast = .TRUE.,
-#
-#-- 
-# Surface Elevation (2D field) output in daily snapshots
-#-- 
-  fields(1,1) = 'ETAN    ',                       # Surface height anomaly
-  fileName(1) = 'diags/ETAN_day_snap/ETAN_day_snap',
-  frequency(1) = -86400.,                         # Daily snapshots
-#
-#-- 
-# Surface Elevation (2D field) output in hourly snapshots
-#-- 
-  fields(1,2) = 'ETAN    ',
-  fileName(2) = 'diags/ETAN_hour_snap/ETAN_hour_snap',
-  frequency(2) = -3600.,                          # Hourly resolution for tsunami propagation
-#
-#-- 
-# Velocity Fields (3D fields) output in hourly snapshots
-#-- 
-  fields(1:2,3) = 'UVEL    ','VVEL    ',          # U- and V-velocity components
-  fileName(3) = 'diags/VEL_hour_snap/VEL_hour_snap',
-  frequency(3) = -3600.,                          # Hourly resolution
-#
-#-- 
-# Velocity Fields (3D fields) output in daily means
-#-- 
-  fields(1:2,4) = 'UVEL    ','VVEL    ',
-  fileName(4) = 'diags/VEL_daily_mean/VEL_daily_mean',
-  frequency(4) = 86400.,                          # Daily means
-#
-#-- 
-# Temperature and Salinity (3D fields) output in daily means
-#-- 
-  fields(1:2,5) = 'THETA   ','SALT    ',          # Temperature and salinity
-  fileName(5) = 'diags/TS_daily_mean/TS_daily_mean',
-  frequency(5) = 86400.,                          # Daily means
-#
-#-- 
-# Surface Temperature and Salinity (3D fields) output as surface snapshots
-#-- 
-  fields(1:2,6) = 'THETA   ','SALT    ',
-  fileName(6) = 'diags/TS_surf_hour_snap/TS_surf_hour_snap',
-  frequency(6) = -3600.,                          # Hourly snapshots
-  levels(:,6) = 1,                                # Surface level only
-#
-#-- 
-# Velocity magnitude (2D field) at surface for hourly output
-#-- 
-  fields(1,7) = 'VELMASS ',                       # Velocity magnitude
-  fileName(7) = 'diags/VELMASS_surf_hour/VELMASS_surf_hour',
-  frequency(7) = -3600.,                          # Hourly resolution
-  levels(:,7) = 1,                                # Surface level
-#
- &
-
-# Parameter for Diagnostics of per level statistics:
- &DIAG_STATIS_PARMS
+ dumpAtLast=.TRUE.,
+ fields(1,1)='ETAN    ',              # Surface elevation
+ fileName(1)='diags/ETAN_day_snap',
+ frequency(1)=-86400.,                # Daily snapshots
  &
