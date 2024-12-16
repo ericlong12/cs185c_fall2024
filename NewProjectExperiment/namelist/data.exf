@@ -1,0 +1,18 @@
+ &EXF_NML_01
+ exf_albedo=0.1,
+ useExfYearlyFields=.FALSE.,
+ useExfCheckRange=.FALSE.,
+ /
+
+ &EXF_NML_02
+ # Disable wind forcing
+ uwindfile='',
+ vwindfile='',
+
+ # External atmospheric forcing files
+ atempfile='exf/ATEMP',
+ aqhfile='exf/AQH',
+ precipfile='exf/PRECIP',
+ swdownfile='exf/SWDOWN',
+ lwdownfile='exf/LWDOWN',
+ /

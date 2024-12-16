@@ -1,0 +1,6 @@
+ &diagnostics_list
+ dumpAtLast=.TRUE.,
+ fields(1,1)='ETAN    ',              # Surface elevation
+ fileName(1)='diags/ETAN_day_snap',
+ frequency(1)=-86400.,                # Daily snapshots
+ &
