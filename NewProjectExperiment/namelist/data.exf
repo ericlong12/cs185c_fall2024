@@ -1,18 +1,7 @@
- &EXF_NML_01
- exf_albedo=0.1,
- useExfYearlyFields=.FALSE.,
- useExfCheckRange=.FALSE.,
- /
-
- &EXF_NML_02
- # Disable wind forcing
- uwindfile='',
- vwindfile='',
-
- # External atmospheric forcing files
- atempfile='exf/ATEMP',
- aqhfile='exf/AQH',
- precipfile='exf/PRECIP',
- swdownfile='exf/SWDOWN',
- lwdownfile='exf/LWDOWN',
- /
+ &EXF_NML
+  exf_albedo=0.3,
+  exf_inscal_T=1.0,              ! Scaling for surface heat forcing
+  exf_bulkformula=.FALSE.,       ! No bulk formula
+  exf_read_hflux=.TRUE.,         ! Read surface heat flux
+  exf_hflux='hflux.bin',         ! Input heat flux file
+ &END
