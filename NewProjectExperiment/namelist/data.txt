@@ -1,53 +1,14 @@
-# ====================
-# | Model parameters |
-# ====================
-
-# Continuous equation parameters
  &PARM01
- select_rStar=2,
- nonlinFreeSurf=4,
- implicitDiffusion=.TRUE.,
- implicitViscosity=.TRUE.,
- tempAdvScheme=7,
- saltAdvScheme=7,
- StaggerTimeStep=.TRUE.,
- useSingleCPUio=.TRUE.,
- exactConserv=.TRUE.,
- debugLevel=0,
- &
-
-# Elliptic solver parameters
- &PARM02
- cg2dMaxIters=300,
- cg2dTargetResidual=1.E-10,
- &
-
-# Time stepping parameters
- &PARM03
- niter0=0,
- deltaT=300.,                # Time step: 5 minutes
- nTimeSteps=1000,            # Run for ~5 hours of simulation
- pChkptFreq=3000.,           # Checkpoint every 15 minutes
- dumpInitAndLast=.TRUE.,
- writePickupAtEnd=.TRUE.,
- &
-
-# Gridding parameters
- &PARM04
- usingSphericalPolarGrid=.TRUE.,
- delX=240*0.083333,
- delY=360*0.0625,
- xgOrigin=-158,
- ygOrigin=65,
- delR=10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 100.0,
- &
-
-# Input datasets
- &PARM05
- bathyFile='ChukchiSea1.bin',
- hydrogThetaFile='THETA_IC.bin',
- hydrogSaltFile='SALT_IC.bin',
- uVelInitFile='UVEL_IC.bin',
- vVelInitFile='VVEL_IC.bin',
- pSurfInitFile='ETAN_IC.bin',
- &
+  usingCartesianGrid=.TRUE.,      ! Use Cartesian grid
+  delX=120*1000,                  ! Grid spacing (X, 120 km)
+  delY=90*1000,                   ! Grid spacing (Y, 90 km)
+  delR=50*.10,                    ! 50 vertical levels (10m each)
+  nIter0=0,                       ! Initial iteration number
+  nTimeSteps=43200,               ! Total timesteps (30 days, dt=120s)
+  deltaT=120.,                    ! Timestep size (120 seconds)
+  abEps=0.1,                      ! Adams-Bashforth factor
+  pChkptFreq=2592000,             ! Checkpoint every 30 days
+  tRef=20.0,                      ! Reference temperature
+  sRef=35.0,                      ! Reference salinity
+  useSingleCPUio=.TRUE.,          ! Single CPU I/O for HPC
+ &END
