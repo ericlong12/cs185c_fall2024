@@ -1,23 +1,13 @@
-      INTEGER sNx
-      INTEGER sNy
-      INTEGER OLx
-      INTEGER OLy
-      INTEGER nSx
-      INTEGER nSy
-      INTEGER nPx
-      INTEGER nPy
-      INTEGER Nx
-      INTEGER Ny
-      INTEGER Nr
+      INTEGER sNx, sNy, OLx, OLy, nSx, nSy, nPx, nPy, Nx, Ny, Nr
       PARAMETER (
-     &           sNx =  120,
-     &           sNy =  90,
-     &           OLx =   4,
-     &           OLy =   4,
-     &           nSx =   1,
-     &           nSy =   1,
-     &           nPx =  2,
-     &           nPy =  4,
+     &           sNx =  30,
+     &           sNy =  30,
+     &           OLx =   2,
+     &           OLy =   2,
+     &           nSx =   2,
+     &           nSy =   2,
+     &           nPx =   4,
+     &           nPy =   4,
      &           Nx  = sNx*nSx*nPx,
      &           Ny  = sNy*nSy*nPy,
-     &           Nr  =  50 )
+     &           Nr  =   1 )   /* Single vertical layer for shallow water */
