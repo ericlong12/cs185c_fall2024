@@ -82,18 +82,19 @@ If you are setting up the repository manually, make sure that this line is inclu
 ### **Directory Structure***
 The boundary condition files are organized in the following structure:
 
-input/
-obcs/
-VVEL_east_2008: Meridional velocity - east
-VVEL_north_2008: Meridional velocity - north
-VVEL_west_2008: Meridional velocity - west
-UVEL_east_2008: Zonal velocity - east
-UVEL_north_2008: Zonal velocity - north
-UVEL_west_2008: Zonal velocity - west
-SALT_east_2008: Salinity - east
-SALT_north_2008: Salinity - north
-SALT_west_2008: Salinity - west
-THETA_east_2008: Temperature - east
-THETA_north_2008: Temperature - north
+- `input/`
+  - `obcs/`
+    - **VVEL_east_2008**: Meridional velocity - east  
+    - **VVEL_north_2008**: Meridional velocity - north  
+    - **VVEL_west_2008**: Meridional velocity - west  
+    - **UVEL_east_2008**: Zonal velocity - east  
+    - **UVEL_north_2008**: Zonal velocity - north  
+    - **UVEL_west_2008**: Zonal velocity - west  
+    - **SALT_east_2008**: Salinity - east  
+    - **SALT_north_2008**: Salinity - north  
+    - **SALT_west_2008**: Salinity - west  
+    - **THETA_east_2008**: Temperature - east  
+    - **THETA_north_2008**: Temperature - north  
+    - **THETA_west_2008**: Temperature - west  
 
 
