@@ -1,14 +1,10 @@
  &PARM01
-  usingCartesianGrid=.TRUE.,      ! Use Cartesian grid
-  delX=120*1000,                  ! Grid spacing (X, 120 km)
-  delY=90*1000,                   ! Grid spacing (Y, 90 km)
-  delR=50*.10,                    ! 50 vertical levels (10m each)
-  nIter0=0,                       ! Initial iteration number
-  nTimeSteps=43200,               ! Total timesteps (30 days, dt=120s)
-  deltaT=120.,                    ! Timestep size (120 seconds)
-  abEps=0.1,                      ! Adams-Bashforth factor
-  pChkptFreq=2592000,             ! Checkpoint every 30 days
-  tRef=20.0,                      ! Reference temperature
-  sRef=35.0,                      ! Reference salinity
-  useSingleCPUio=.TRUE.,          ! Single CPU I/O for HPC
- &END
+ delX=30.0, delY=30.0,          ! Grid resolution (uniform)
+ deltaT=30.0,                   ! Time step (seconds)
+ nIter0=0, nTimeSteps=4800,     ! 4 hours of simulation
+ useSingleCPUio=.TRUE.,
+
+ &PARM02
+ readBinaryPrec=64,             ! Binary precision
+ bathyFile='bathy.bin',         ! Bathymetry file
+ external_forcing_surface='ETAN_IC.bin' ! Initial sea surface height
