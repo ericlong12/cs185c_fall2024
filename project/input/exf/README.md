@@ -84,6 +84,6 @@ To ensure the model runs correctly, organize these files as follows:
 
 ## If using zero wind forcing, replace UWIND_2008 and VWIND_2008 with UWIND_zero and VWIND_zero:
 
-uwindfile  = 'exf/UWIND_zero',
-vwindfile  = 'exf/VWIND_zero',
+   uwindfile  = 'exf/UWIND_zero',
+   vwindfile  = 'exf/VWIND_zero',
 
