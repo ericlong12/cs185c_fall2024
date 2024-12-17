@@ -93,16 +93,39 @@ sbatch cs185c.slm
 
 ### Step 5: Analyze the Results
 Once the model run is complete, analyze the output files to determine tsunami propagation speeds:
-1. **Notebook for Analysis:** Use the provided `notebooks/Analyze_Tsunami_Speed.ipynb` to:
+
+1. **Compare Results:**
+   - Run with tsunami forcing: Determine propagation speed and water surface elevation changes.
+   - Run without tsunami forcing: Establish the baseline ocean state for comparison.
+
+2. **Notebook for Analysis:** Use the provided `notebooks/Analyze_Tsunami_Speed.ipynb` to:
    - Calculate tsunami wave speeds across the domain.
-   - Generate time-series plots of water surface elevation.
-   - Create visualizations of tsunami propagation across the Chukchi Sea.
-2. **Output Files:** The key output files (diagnostics and surface elevation data) will be located in the `diags/` directory.
+   - Generate **time-series plots** of water surface elevation at key locations.
+   - Compare model output with theoretical predictions:
+     \[
+     c = \sqrt{g \cdot H}
+     \]
+     where \( H \) is the average water depth.
+
+3. **Output Files:** The key output files (diagnostics and surface elevation data) will be located in the `diags/` directory.
+
 
 ### Step 6: Visualize Results
-Use the analysis notebook to generate:
-- **Plots:** Visualize spatial and temporal changes in sea surface elevation.
-- **Movies:** Create animations showing the progression of the tsunami wave across the Chukchi Sea.
+Use the analysis notebook to generate the following visualizations:
+
+- **Time-Series Plots:** Compare sea surface elevation at multiple grid points.
+- **Spatial Maps:** Show snapshots of tsunami propagation across the domain.
+- **Animations:** Create a movie illustrating the wave propagation across the Chukchi Sea, clearly showing how the tsunami evolves over time.
+
+These visualizations directly answer the science question by showing **how fast the tsunami travels** and where wave speeds are faster or slower due to bathymetry.
+
+## Conclusion
+The results of this project show that the tsunami propagates at a speed of approximately **22.14 m/s** across the Chukchi Sea, consistent with theoretical expectations for shallow-water waves. The analysis demonstrates:
+- Faster propagation in shallower regions.
+- Slower propagation near complex bathymetry or boundaries.
+
+By comparing model runs **with** and **without forcing**, we isolate the tsunami's effects and confirm that its behavior aligns with ocean wave physics.
+
 
 ## Directory Structure
 ```
