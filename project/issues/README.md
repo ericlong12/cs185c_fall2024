@@ -77,11 +77,6 @@ Error: can't read OPTFILE="../../../tools/build_options/linux_amd64_/usr/bin/gfo
 **Error Message:**  
 EEBOOT_MINIMAL: No. of procs=     1 not equal to nPx*nPy=     8  
 
-**Steps Taken:**  
-- Copied `mitgcmuv` from another working project:  
-  cp /scratch/cs185c06/MITgcm/configurations/chukchi_tsunami/build/mitgcmuv .  
-- Result: Same error persists.
-
 ---
 
 ### 7. Connection Timeout to Spartan Cluster
