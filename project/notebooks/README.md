@@ -13,7 +13,7 @@ This directory contains Jupyter Notebooks for preparing the input data and confi
   - Defines and visualizes the model grid for the domain of interest.  
   - Quantifies grid spacing and visualizes inter-point distances using great-circle calculations.  
 - **Outputs**:  
-  - Visualization of grid spacing and grid domain.  
+  - Visualization of grid spacing and domain.  
 - **Contribution**:  
   Sets up the structured grid that the model will use to perform calculations, ensuring proper domain representation.
 
@@ -32,43 +32,47 @@ This directory contains Jupyter Notebooks for preparing the input data and confi
 
 ### 3. **Creating the Boundary Conditions.ipynb**
 - **Purpose**:  
-  - Prepares **boundary conditions** (e.g., temperature, salinity, velocity) by interpolating data from the **ECCO V5 Alpha state estimate** onto the model grid.  
+  - Prepares **boundary conditions** (e.g., temperature, salinity, zonal and meridional velocities) by interpolating data from the **ECCO V5 Alpha state estimate** onto the model grid.  
+  - Splits the fields into **east**, **north**, and **west** boundaries for model input.  
 - **Outputs**:  
-  - Binary files for boundary conditions:  
-    - `THETA_IC.bin` (temperature)  
-    - `SALT_IC.bin` (salinity)  
-    - `UVEL_IC.bin` (zonal velocity)  
-    - `VVEL_IC.bin` (meridional velocity)  
+  The notebook generates the following binary files:  
+  - Temperature (`THETA`):  
+    - `THETA_east_2008`, `THETA_north_2008`, `THETA_west_2008`  
+  - Salinity (`SALT`):  
+    - `SALT_east_2008`, `SALT_north_2008`, `SALT_west_2008`  
+  - Zonal velocity (`UVEL`):  
+    - `UVEL_east_2008`, `UVEL_north_2008`, `UVEL_west_2008`  
+  - Meridional velocity (`VVEL`):  
+    - `VVEL_east_2008`, `VVEL_north_2008`, `VVEL_west_2008`  
+
 - **Contribution**:  
-  Provides boundary conditions necessary to drive the model and maintain realistic ocean circulation at the domain edges.
+  Provides boundary conditions required to maintain realistic ocean circulation at the domain edges. These files drive the inflow and outflow of key model fields (temperature, salinity, and velocity) at the specified boundaries.
 
 ---
 
 ### 4. **Creating the External Conditions.ipynb**
 - **Purpose**:  
-  - Prepares **external forcing conditions** such as wind, atmospheric temperature, and precipitation using **ECCO external fields**.  
-  - Interpolates these fields onto the model grid.  
+  - Prepares **external forcing conditions** such as wind stress, atmospheric temperature, precipitation, and radiation fields.  
+  - Interpolates **ECCO external fields** onto the model grid to match the domain's spatial resolution.  
 - **Outputs**:  
-  - Binary files for external forcing conditions:  
-    - Atmospheric temperature  
-    - Wind stress (zonal and meridional)  
-    - Shortwave and longwave radiation  
-    - Precipitation  
+  The notebook generates the following binary files:  
+  - `AQH_2008`: Specific humidity  
+  - `ATEMP_2008`: Atmospheric temperature  
+  - `LWDOWN_2008`: Longwave downward radiation  
+  - `PRECIP_2008`: Precipitation  
+  - `SWDOWN_2008`: Shortwave downward radiation  
+  - `UWIND_2008`: Zonal wind stress  
+  - `VWIND_2008`: Meridional wind stress  
+
 - **Contribution**:  
-  Simulates realistic atmospheric interactions, which are essential for driving the ocean surface processes.
+  Simulates realistic atmospheric forcing over the ocean surface, including heat fluxes, freshwater fluxes, and wind-driven dynamics. These fields are critical for forcing surface boundary conditions in the model.
 
 ---
 
 ### 5. **Creating the Initial Conditions.ipynb**
 - **Purpose**:  
-  - Prepares **initial conditions** (e.g., temperature, salinity, velocity) to initialize the model state.  
-  - Interpolates ECCO fields onto the model grid.  
+  - Prepares **initial conditions** for the ocean model, including temperature, salinity, and velocities.  
+  - Interpolates ECCO fields onto the model grid to initialize the model state.  
 - **Outputs**:  
-  - Binary files for initial conditions:  
-    - `THETA_IC.bin` (initial temperature)  
-    - `SALT_IC.bin` (initial salinity)  
-    - `UVEL_IC.bin` (initial zonal velocity)  
-    - `VVEL_IC.bin` (initial meridional velocity)  
-    - `ETAN_IC.bin` (surface pressure anomaly)  
-- **Contribution**:  
-  Provides the starting state for the model simulation, ensuring that the model evolves from a realistic ocean state.
+  The notebook generates the following binary files:  
+  - `THETA_IC.bin`
