@@ -2,8 +2,7 @@
 
 ## **Overview**
 
-This directory contains Jupyter Notebooks for preparing the input data and configurations necessary to run an ocean model using the **MITgcm** framework. The notebooks help generate **bathymetry**, **boundary conditions**, **external forcing conditions**, **initial conditions**, and the **model grid**. These inputs are critical to ensure the successful setup, execution, and analysis of the ocean model.
-
+This directory contains Jupyter Notebooks for preparing the input data and configurations to run the experiment. These notebooks generate **bathymetry**, **boundary conditions**, **external forcing conditions**, **initial conditions**, and the **model grid**. 
 ---
 
 ## **Contents**
