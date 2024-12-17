@@ -98,7 +98,7 @@ Once the model run is complete, analyze the output files to determine tsunami pr
    - Run with tsunami forcing: Determine propagation speed and water surface elevation changes.
    - Run without tsunami forcing: Establish the baseline ocean state for comparison.
 
-2. **Notebook for Analysis:** Use the provided `notebooks/Analyze_Tsunami_Speed.ipynb` to:
+2. **Notebook for Analysis:** Use the provided `Tsunami Propagation Analysis.ipynb` to:
    - Calculate tsunami wave speeds across the domain.
    - Generate **time-series plots** of water surface elevation at key locations.
    - Compare model output with theoretical predictions:
@@ -130,15 +130,12 @@ By comparing model runs **with** and **without forcing**, we isolate the tsunami
 ## Directory Structure
 ```
 chukchi_tsunami/
-|-- code/               
-|-- input/               
-|-- namelist/            
-|-- build/              
-|-- run/                 
-|-- run_no_forcing/      
-|-- diags/              
-|-- notebooks/          
-|-- figures/             
-|-- cs185c.slm          
+│-- code/               
+│-- input/               
+│-- namelist/           
+│-- build/            
+│-- run/                
+│   ├── cs185c.slm     
+│   └── diags/               
 ```
 
