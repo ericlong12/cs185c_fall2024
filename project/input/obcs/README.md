@@ -5,12 +5,11 @@ This directory contains the **open boundary condition (OBCS)** files required to
 ---
 
 ## **Purpose of OBCS Files**
-The boundary condition files define the behavior of ocean variables (velocities, temperature, and salinity) at the open edges of the model domain. These conditions allow for realistic water flow, temperature, and salinity exchange with the larger ocean system.
+The boundary condition files define the behavior of ocean variables (velocities, temperature, and salinity) on the model. These conditions are made for water flow, temperature, and salinity exchange with the ocean system.
 
 ---
 
 ## **File List**
-The files are organized by variable and boundary direction:
 
 | File Name            | Description          |
 |-----------------------|----------------------|
@@ -39,7 +38,7 @@ This directory contains the **open boundary condition (OBCS)** files required fo
 ---
 
 ## **Using OBCS Files**
-To ensure boundary conditions are included in the model, the following steps have already been completed if you are downloading this repository directly from GitHub.
+To ensure boundary conditions are included in the model, the following steps have already been completed if you are downloading from this repository directly on GitHub.
 
 ---
 
@@ -72,7 +71,7 @@ The boundary files are specified in the **`data.obcs`** configuration file. The 
 ```
 
 ### **Enabling the OBCS Package**
-To use the grids as boundary conditions, the OBCS package has been enabled at compile time. The following line has already been added to the code/packages.conf file:
+The OBCS package is required to include open boundary conditions in the model. This package has already been enabled during compilation by adding the following line to the code/packages.conf file:
 
 ```
 obcs
