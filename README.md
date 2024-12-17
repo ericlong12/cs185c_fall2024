@@ -107,15 +107,15 @@ Use the analysis notebook to generate:
 ## Directory Structure
 ```
 chukchi_tsunami/
-|-- code/                 # MITgcm code modifications
-|-- input/                # Input files (bathymetry, forcing, initial conditions)
-|-- namelist/             # Namelist files for model configuration
-|-- build/                # Directory for compiled model
-|-- run/                  # Run directory for the simulation
-|-- run_no_forcing/       # Run directory for simulation without forcing
-|-- diags/                # Output diagnostics
-|-- notebooks/            # Jupyter notebooks for analysis
-|-- figures/              # Visualizations and movies
-|-- cs185c06.slm          # Slurm job script
+|-- code/               
+|-- input/               
+|-- namelist/            
+|-- build/              
+|-- run/                 
+|-- run_no_forcing/      
+|-- diags/              
+|-- notebooks/          
+|-- figures/             
+|-- cs185c.slm          
 ```
 
