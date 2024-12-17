@@ -1,10 +1,3 @@
  &DIAGNOSTICS_LIST
-  diag_list(1,1)='THETA', 'AVG', 'all', 1,   ! Average temperature at all levels
-  diag_list(2,1)='THETA', 'snap', 'all', 86400, ! Daily temperature snapshot
- &END
-
- &DIAGNOSTICS_PARAMS
-  fileFreq=2592000,             ! Output frequency (30 days)
-  averagedFreq=120,             ! Averaged diagnostics output every 120 seconds
-  snapshotFreq=86400,           ! Daily snapshot output
- &END
+ diag_name(1) = 'ETAN',
+ diag_freq(1) = 600.0,
