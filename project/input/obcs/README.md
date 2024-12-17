@@ -79,7 +79,7 @@ obcs
 ```
 If you are setting up the repository manually, make sure that this line is included in the packages.conf file
 
-### **Directory Structure***
+### **Directory Structure**
 The boundary condition files are organized in the following structure:
 
 - `input/`
