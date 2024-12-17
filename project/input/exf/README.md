@@ -54,18 +54,17 @@ If you do not already have these files, they can be generated as follows:
 ## **Directory Structure**
 To ensure the model runs correctly, organize these files as follows:
 
-
 input/
-   ├── exf/
-   │   ├── VWIND_2008    
-   │   ├── UWIND_2008    
-   │   ├── AQH_2008      
-   │   ├── ATEMP_2008    
-   │   ├── LWDOWN_2008   
-   │   ├── PRECIP_2008     
-   │   ├── SWDOWN_2008    
-   │   ├── VWIND_zero     
-   │   └── UWIND_zero   
+└── exf/
+    ├── VWIND_2008      # Meridional wind stress for 2008
+    ├── UWIND_2008      # Zonal wind stress for 2008
+    ├── AQH_2008        # Atmospheric specific humidity for 2008
+    ├── ATEMP_2008      # Atmospheric temperature for 2008
+    ├── LWDOWN_2008     # Downward longwave radiation for 2008
+    ├── PRECIP_2008     # Precipitation rate for 2008
+    ├── SWDOWN_2008     # Downward shortwave radiation for 2008
+    ├── VWIND_zero      # Optional: Zero meridional wind stress
+    └── UWIND_zero      # Optional: Zero zonal wind stress
 
 ---
 
