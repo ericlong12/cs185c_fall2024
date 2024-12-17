@@ -82,8 +82,10 @@ To ensure the model runs correctly, organize these files as follows:
    lwdownfile = 'exf/LWDOWN_2008',
 
 
-## If using zero wind forcing, replace UWIND_2008 and VWIND_2008 with UWIND_zero and VWIND_zero:
+## If using zero wind forcing, replace `UWIND_2008` and `VWIND_2008` with `UWIND_zero` and `VWIND_zero`:
 
-   uwindfile  = 'exf/UWIND_zero',
-   vwindfile  = 'exf/VWIND_zero',
+```python
+uwindfile = 'exf/UWIND_zero'
+vwindfile = 'exf/VWIND_zero'
+
 
