@@ -1,5 +1,3 @@
  &PACKAGES
-  useDiagnostics=.TRUE.,
-  useKPP=.TRUE.,                 ! Vertical mixing
-  useEXF=.TRUE.,                 ! External forcing (for surface heating)
- &END
+ useDiagnostics=.TRUE.,
+ useKPP=.FALSE.,
