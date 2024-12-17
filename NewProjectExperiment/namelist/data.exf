@@ -1,7 +1,0 @@
- &EXF_NML
-  exf_albedo=0.3,
-  exf_inscal_T=1.0,              ! Scaling for surface heat forcing
-  exf_bulkformula=.FALSE.,       ! No bulk formula
-  exf_read_hflux=.TRUE.,         ! Read surface heat flux
-  exf_hflux='hflux.bin',         ! Input heat flux file
- &END

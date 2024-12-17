@@ -1,3 +1,0 @@
- &DIAGNOSTICS_LIST
- diag_name(1) = 'ETAN',
- diag_freq(1) = 600.0,
