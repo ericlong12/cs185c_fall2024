@@ -4,6 +4,11 @@ This directory contains the **open boundary condition (OBCS)** files required to
 
 ---
 
+## **Why These Files Are Not Uploaded**
+The input files are not included in this repository because **GitHub is intended for code storage, not large data files**. These binary files are large and take up too much space.
+
+---
+
 ## **Purpose of OBCS Files**
 The boundary condition files define the behavior of ocean variables (velocities, temperature, and salinity) on the model. These conditions are made for water flow, temperature, and salinity exchange with the ocean system.
 
