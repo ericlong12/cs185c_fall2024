@@ -69,9 +69,11 @@ The boundary files are specified in the **`data.obcs`** configuration file. The 
  OBNsFile = 'obcs/SALT_north',
 #
  &
+```
 
 ### **Enabling the OBCS Package**
 To use the grids as boundary conditions, the OBCS package has been enabled at compile time. The following line has already been added to the code/packages.conf file:
+
 ```
 obcs
 ```
