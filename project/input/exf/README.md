@@ -54,6 +54,7 @@ If you do not already have these files, they can be generated as follows:
 ## **Directory Structure**
 To ensure the model runs correctly, organize these files as follows:
 
+
 input/
 ├── exf/
 │   ├── VWIND_2008    
@@ -65,6 +66,8 @@ input/
 │   ├── SWDOWN_2008    
 │   ├── VWIND_zero     
 │   └── UWIND_zero     
+
+
 
 ---
 
