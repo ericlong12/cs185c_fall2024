@@ -77,6 +77,22 @@ To use the grids as boundary conditions, the OBCS package has been enabled at co
 ```
 obcs
 ```
-If you are setting up the repository manually, ensure this line is included in the packages.conf file before recompiling MITgcm.
+If you are setting up the repository manually, make sure that this line is included in the packages.conf file
 
+### **Directory Structure***
+The boundary condition files are organized in the following structure:
 
+input/
+├── obcs/
+│   ├── VVEL_east_2008
+│   ├── VVEL_north_2008
+│   ├── VVEL_west_2008
+│   ├── UVEL_east_2008
+│   ├── UVEL_north_2008
+│   ├── UVEL_west_2008
+│   ├── SALT_east_2008
+│   ├── SALT_north_2008
+│   ├── SALT_west_2008
+│   ├── THETA_east_2008
+│   ├── THETA_north_2008
+│   └── THETA_west_2008
