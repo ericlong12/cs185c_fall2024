@@ -101,11 +101,7 @@ Once the model run is complete, analyze the output files to determine tsunami pr
 2. **Notebook for Analysis:** Use the provided `Tsunami Propagation Analysis.ipynb` to:
    - Calculate tsunami wave speeds across the domain.
    - Generate **time-series plots** of water surface elevation at key locations.
-   - Compare model output with theoretical predictions:
-     \[
-     c = \sqrt{g \cdot H}
-     \]
-     where \( H \) is the average water depth.
+   - Compare model output with theoretical predictions: c = sqrt(g * H) where H is the average water depth.
 
 3. **Output Files:** The key output files (diagnostics and surface elevation data) will be located in the `diags/` directory.
 
